@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>POO Javascript</title>
+        <script type="text/javascript" src="../../js/prototypes/Msg/Translate.js"></script>
+        <script type="text/javascript" src="../../js/features.js"></script>
+        <script type="text/javascript">
+            //Criação de um protótipo normal
+            function MyClass(param1){
+                this.methodEmpty = function(){}
+            }
+
+            //Criação de outro protótipo normal
+            function OtherClass(){
+                
+            }
+
+            //Retorna o nome da classe, nesse caso: "MyClass"
+            alert('Nome da classe: '+MyClass.getName());
+
+            /* Retora um array com os nomes dos parâmetros de MyClass
+             * Nesse caso, o retorno é "param1"
+             */
+            alert('Parâmetros da classe: '+MyClass.getParametersName());
+
+            //Checa se uma função está vazia
+            var objMy = new MyClass();
+            alert('O método "methodEmpty" está vazio: '+objMy.methodEmpty.isEmpty());
+
+            //Retorna um array com os nomes das classes, ao invés dos seu conteúdo
+            var arrPrototypes = [MyClass,OtherClass];
+            alert('Array de protótipos: '+arrPrototypes.getNames());
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

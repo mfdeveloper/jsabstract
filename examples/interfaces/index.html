@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>POO Javascript</title>
+        <script type="text/javascript" src="../../js/prototypes/Msg/Translate.js"></script>
+        <script type="text/javascript" src="../../js/features.js"></script>
+        <script type="text/javascript" src="../../js/prototypes/Interface.js"></script>
+        <script type="text/javascript">
+            /*
+             * Cria uma Interface
+             *
+             * OBS: aconselhamos o sufixo "_Interface" nas suas interfaces.
+             * È apenas uma sugestão de boas práticas, não uma obrigação!!
+             */
+            function Person_Interface(){
+                /*
+                 * Herança da classe "Interface", trasformando "Person_Interface"
+                 * em uma interface de fato
+                 */
+                Interface.inherit(this,arguments);
+
+                //Método a ser implementado nas classes
+                this.method = function(param1){}
+            }
+
+            function Human_Interface(){
+                Interface.inherit(this,arguments);
+            }
+
+            /* Classe comum: Precisa implementar o método "method"
+             * herdado da interface: "Person_Interface"
+             */
+            function Person(){
+                this.method = function(param1){
+                    alert('vamos nessa, testando implementação !!');
+                }
+                this.test = function(){
+                    alert('testando método own');
+                }
+            }
+
+            /* Implementa a interface "Person_Interface" e "Human_Interface"
+             *
+             * OBS: Observe que, é permitido implementar quantas interfaces
+             * você julgue necessário, verificando é claro, o conflito
+             * com os nomes de métodos
+             */
+            Person.implement([Person_Interface,Human_Interface]);
+
+            //Verifica as interfaces implementadas por "Person"
+            alert('Interfaces implementadas por "Person": '+Person.Chain.get('interfaces'));
+
+            //Daqui em diante, as intâncias de "Person" herdaram os métodos de "Person_Interface"
+            var objP = new Person();
+            objP.method();
+
+            //Géra uma exceção: Não é permitido criar instâncias de interfaces
+            var objIP = new Person_Interface();
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

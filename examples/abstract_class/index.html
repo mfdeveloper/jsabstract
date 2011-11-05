@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>POO Javascript</title>
+        <script type="text/javascript" src="../../js/prototypes/Msg/Translate.js"></script>
+        <script type="text/javascript" src="../../js/features.js"></script>
+        <script type="text/javascript" src="../../js/prototypes/Abstract.js"></script>
+        <script type="text/javascript">
+            /*
+             * Criação de uma classe Abstrata "Person_Abstract"
+             *
+             * OBS: aconselhamos o sufixo "_Abstract" nas suas classes abstratas.
+             * È apenas uma sugestão de boas práticas, não uma obrigação!!
+             */
+            function Person_Abstract(){
+                /*
+                 * Herança da classe "Abstract", trasformando "Person_Abstract"
+                 * em uma classe Abstrata
+                 */
+                Abstract.inherit(this,arguments);
+
+                //Propriedade publica normal
+                this.attr = '';
+
+                //Métodos abstratos: Necessária implementação nas classes filhas
+                this.abstractNewerTest = function(param1,param2){}
+                this.abstractTest = function(){}
+
+                //Método público comum: NÃO é necessária implementação
+                this.alo = function(){
+
+                }
+            }
+
+            //Classe Funcionário abstrata
+            function Employee_Abstract(){
+                Abstract.inherit(this,arguments);
+
+                //Método abstrato: Necessária implementação nas classes filhas
+                this.abstractShow = function(){}
+            }
+
+            /* Classe comum: Precisa implementar o método "newerTest"
+             * herdado de: "Person_Abstract"
+             */
+            function Employee(){
+                this.newerTest = function(param1,param2){
+                    alert('teste de implementação do método de uma classe abstrata');
+                }
+                this.test = function(){
+                    alert('testaaandoo');
+                }
+            }
+
+            //Extend da classe abstrata "Person_Abstract"
+            Employee.extendAbstract(Person_Abstract);
+
+            //Daqui em diante, as instâncias de "Employee herdaram os métodos e atributos de "Person_Abstract"
+            var objEmp = new Employee();
+            objEmp.newerTest();
+
+            /**
+             * OBS: caso tente uma herança múltipla de classes abstratas como o exemplo abaixo,
+             * uma exceção é gerada
+             *
+             * Employee.extendAbstract([Person_Abstract,Employee_Abstract]);
+             */
+
+            //Géra um exceção: Não é permitido criar instâncias de classes abstratas
+            var objPerson = new Person_Abstract();
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

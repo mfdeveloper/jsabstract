@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>POO Javascript</title>
+        <script type="text/javascript" src="../../js/prototypes/Msg/Translate.js"></script>
+        <script type="text/javascript" src="../../js/features.js"></script>
+        <script type="text/javascript" src="../../js/prototypes/LoadFile.js"></script>
+        <script type="text/javascript" src="../../js/prototypes/Include.js"></script>
+        <script type="text/javascript" src="../../js/prototypes/Autoload.js"></script>
+        <script type="text/javascript">
+            /*
+             * Autoload Básico
+             */
+
+            //Configurações gerais para todos os autoloads
+            Autoload.setConfigs({
+                basePath:'js_for_autoload',
+                extension:'js',
+                extCompressFile:'min',
+                allCompressedFiles:false,
+				async:false/*,
+                onBeforeLoad:function(className,cfgs){
+                    alert('Carregando classe: '+className);
+                }*/
+            });
+
+            //Cria uma instância da classe a ser carregada automaticamente
+
+			Autoload('Test',{
+				cssPath:true,
+				serverCompressType:'gzip',
+				success:function(obj){
+					obj.otherMethod();
+					
+					alert(Test.isAnnotationPresent('blá!'));
+					obj.release();
+				}
+			});
+			
+			//obj.methodTest();
+            
+        </script>
+    </head>
+    <body>
+		Testando
+    </body>
+</html>
