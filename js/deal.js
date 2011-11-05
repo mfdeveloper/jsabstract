@@ -1,5 +1,5 @@
-//Deal function
 function init() {
+	//Deal function
 	String.prototype.deal = function() {
 		var content = this,
 			n		= 0,
@@ -29,5 +29,8 @@ function init() {
 
 (function() {
 	init();
-	console.log('Functionando: {0:e2}, {1}'.deal('389.8713978', 'test'))
+	//Basic
+	console.log('Hello: {0}'.deal('test'))
+	//Decimal
+	console.log('First: {0:e2}; Second: {1:e3}, Third: {2:e4}'.deal(100.384247983, 257.78432947, 387.84782947))
 }())
