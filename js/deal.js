@@ -9,7 +9,8 @@ function init() {
 			if (content.search(/\{+[0-9]+\}/) !== -1) {
 				content = content.replace('\{' + i + '\}', args[i])	
 			} if (content.search(/\{[0-9][:][e][0-9]\}/) !== -1) {
-				n = content.replace('\{'+i+':e','')
+				n = content.match(/\{[0-9][:][e][0-9]\}/)
+				n = n[0].replace('\{'+i+':e','')
 				n = n.replace('\}','')
 				n = parseInt(n)
 			
@@ -28,5 +29,5 @@ function init() {
 
 (function() {
 	init();
-	console.log('{0:e2}, {1}'.deal('1000.000', 'test'))
+	console.log('Functionando: {0:e2}, {1}'.deal('389.8713978', 'test'))
 }())
