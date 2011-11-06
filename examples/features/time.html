@@ -6,10 +6,24 @@
 	<script type="text/javascript" src='../../js/deal.js'></script>
 	<script type="text/javascript" src='../../js/time.js'></script>
 	<script type="text/javascript">
-		console.log('Week: {0}'.deal(Time.week))
-		console.log('Day: {0}'.deal(Time.day))
-		console.log('Month: {0}'.deal(Time.month))
-		console.log('Year: {0}'.deal(Time.year))
+		console.log('--Date--')
+		//separator
+		console.log('Week: {0}'.deal(Time.week))  //Using: Time.week
+		console.log('Day: {0}'.deal(Time.day)) //Using: Time.day
+		console.log('Month: {0}'.deal(Time.month)) //Using: Time.month
+		console.log('Year: {0}'.deal(Time.year)) //Using: Time.year
+		//separator
+		console.log('--Time--')
+		//separator
+		console.log('Hour: {0}'.deal(Time.hour)) //Using: Time.hour
+		console.log('Minute: {0}'.deal(Time.minute)) //Using: Time.minute
+		console.log('Second: {0}'.deal(Time.second)) //Using: Time.second
+		console.log('Milliseond: {0}'.deal(Time.millisecond)) //Using: Time.millisecond
+		//separator
+		console.log('--Functions in Time--')
+		//separator
+		console.log('Complete Date: {0}'.deal(Time.now_date('%d/%m/%y')))
+		console.log('Complete Time: {0}'.deal(Time.now_time('%h:%m:%s:%S')))
 	</script>
 	<title>Time Object</title>
 </head>
@@ -25,50 +39,151 @@
 	<div class="main">
 		<section>
 			<article>
-				<h3>Time week:</h3>
+				<h3>Time weeks:</h3>
 				<p class="code-block">
 					<span>Syntax:</span>
 					<span>Time.week</span>
 				</p>
 				<p class="output-block">
 					<span>Output:</span>
-					<span></span>
+					<span>0</span>
 				</p>
 			</article>
 			<hr />
 			<article>
-				<h3>Time day:</h3>
+				<h3>Time days:</h3>
 				<p class="code-block">
 					<span>Syntax:</span>
 					<span>Time.day</span>
 				</p>
 				<p class="output-block">
 					<span>Output:</span>
-					<span></span>
+					<span>6</span>
 				</p>
 			</article>
 			<hr />
 			<article>
-				<h3>Time month:</h3>
+				<h3>Time months:</h3>
 				<p class="code-block">
 					<span>Syntax:</span>
 					<span>Time.month</span>
 				</p>
 				<p class="output-block">
 					<span>Output:</span>
-					<span></span>
+					<span>10</span>
 				</p>
 			</article>
 			<hr />
 			<article>
-				<h3>Time year:</h3>
+				<h3>Time years:</h3>
 				<p class="code-block">
 					<span>Syntax:</span>
 					<span>Time.year</span>
 				</p>
 				<p class="output-block">
 					<span>Output:</span>
-					<span></span>
+					<span>2011</span>
+				</p>
+			</article>
+			<hr />
+			<article>
+				<h3>Time hours:</h3>
+				<p class="code-block">
+					<span>Syntax:</span>
+					<span>Time.hour</span>
+				</p>
+				<p class="output-block">
+					<span>Output:</span>
+					<span>19</span>
+				</p>
+			</article>
+			<hr />
+			<article>
+				<h3>Time minutes:</h3>
+				<p class="code-block">
+					<span>Syntax:</span>
+					<span>Time.year</span>
+				</p>
+				<p class="output-block">
+					<span>Output:</span>
+					<span>19</span>
+				</p>
+			</article>
+			<hr />
+			<article>
+				<h3>Time seconds:</h3>
+				<p class="code-block">
+					<span>Syntax:</span>
+					<span>Time.second</span>
+				</p>
+				<p class="output-block">
+					<span>Output:</span>
+					<span>23</span>
+				</p>
+			</article>
+			<hr />
+			<article>
+				<h3>Time milliseconds:</h3>
+				<p class="code-block">
+					<span>Syntax:</span>
+					<span>Time.millisecond</span>
+				</p>
+				<p class="output-block">
+					<span>Output:</span>
+					<span>347</span>
+				</p>
+			</article>
+			<hr />
+			<header>
+				<section>
+					<article>
+						<h2>Functions in Time:</h2>
+					</article>
+				</section>
+			</header>
+			<hr />
+			<article>
+				<h3>Time for date:</h3>
+				<p class="code-block">
+					<span>Syntax:</span>
+					<span>Time.now_date('%d/%m/%y')</span>
+				</p>
+				<p class="obs">
+					<span>Observation:</span>
+					<span>
+						This function accept: 
+						%d = Days, 
+						%m = Months, 
+						%y = Years; 
+						Slash in separation are optional.
+					</span>
+				</p>
+				<p class="output-block">
+					<span>Output:</span>
+					<span>6/10/2011</span>
+				</p>
+			</article>
+			<hr />
+			<article>
+				<h3>Time for time:</h3>
+				<p class="code-block">
+					<span>Syntax:</span>
+					<span>Time.now_time('%h:%m:%s:%S')</span>
+				</p>
+				<p class="obs">
+					<span>Observation:</span>
+					<span>
+						This function accept:
+						%h = Hours, 
+						%m = Minutes, 
+						%s = Seconds, 
+						%S = Milliseconds;
+						Double dots in separation are optional.
+					</span>
+				</p>
+				<p class="output-block">
+					<span>Output:</span>
+					<span>19:19:23:347</span>
 				</p>
 			</article>
 		</section>

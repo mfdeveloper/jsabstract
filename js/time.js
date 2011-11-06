@@ -90,11 +90,11 @@ function init(){
 					break;
 				} else {
 					if (args[0].search(/([%][d|D]){1}/) !== 1) {
-						args[0] = args[0].replace(/([%][d|D])/, this.day());
+						args[0] = args[0].replace(/([%][d|D])/, this.day);
 					} if (args[0].search(/([%][m|M])/) !== 1) {
-						args[0] = args[0].replace(/([%][m|M])/, this.month());
+						args[0] = args[0].replace(/([%][m|M])/, this.month);
 					} if (args[0].search(/([%][y|Y])/) !== 1) {
-						args[0] = args[0].replace(/([%][y|Y])/, this.year());
+						args[0] = args[0].replace(/([%][y|Y])/, this.year);
 					} else {
 						return false;
 					}
@@ -118,14 +118,14 @@ function init(){
 				if (c == 4) {
 					break;
 				} else {
-					if (args[0].search(/([%][h|H]){1}/) !== 1) {
-						args[0] = args[0].replace(/([%][h|H])/, this.hour());
-					} if (args[0].search(/([%][m|M])/) !== 1) {
-						args[0] = args[0].replace(/([%][m|M])/, this.minute());
-					} if (args[0].search(/([%][s|S])/) !== 1) {
-						args[0] = args[0].replace(/([%][s|S])/, this.second());
-					} if (args[0].search(/([%]([s][s])|([S][S]))/) !== 1) {
-						args[0] = args[0].replace(/([%]([s][s])|([S][S]))/, this.millisecond());
+					if (args[0].search(/([%][h|H])/) !== 1) {
+						args[0] = args[0].replace(/([%][h|H])/, this.hour);
+					} if (args[0].search(/([%][m|M]$)/) !== 1) {
+						args[0] = args[0].replace(/([%][m|M])/, this.minute);
+					} if (args[0].search(/([%][s]$)/) !== 1) {
+						args[0] = args[0].replace(/([%][s])/, this.second);
+					} if (args[0].search(/([%][S]$)/) !== 1) {
+						args[0] = args[0].replace(/([%][S]$)/, this.millisecond);
 					} else {
 						return false;
 					}
