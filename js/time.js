@@ -68,7 +68,7 @@ function init(){
 		var args = arguments,
 			c = 0;
 
-		if (typeof args[0] !== 'undefined') {
+		if (typeof args[0] !== 'undefined' && typeof args[0] == 'string' && args[0] !== '') {
 			while (true) {
 				if (c == 3) {
 					break;
@@ -97,9 +97,9 @@ function init(){
 		var args = arguments,
 			c = 0;
 
-		if (typeof args[0] !== 'undefined') {
+		if (typeof args[0] !== 'undefined' && typeof args[0] == 'string'  && args[0] !== '') {
 			while (true) {
-				if (c == 3) {
+				if (c == 4) {
 					break;
 				} else {
 					if (args[0].search(/([%][h|H]){1}/) !== 1) {
@@ -108,6 +108,8 @@ function init(){
 						args[0] = args[0].replace(/([%][m|M])/, this.minute());
 					} if (args[0].search(/([%][s|S])/) !== 1) {
 						args[0] = args[0].replace(/([%][s|S])/, this.second());
+					} if (args[0].search(/([%]([s][s])|([S][S]))/) !== 1) {
+						args[0] = args[0].replace(/([%]([s][s])|([S][S]))/, this.millisecond());
 					} else {
 						return false;
 					}
