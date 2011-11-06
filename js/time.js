@@ -16,15 +16,21 @@ function init(){
 		return parseInt(week);
 	};
 	
+	Time.week = Time.week();
+	
 	Time.day = function (day) {
 		day = this.time.getDate();
 		return parseInt(day);
 	};
 	
+	Time.day = Time.day();
+	
 	Time.month = function (month) {
 		month = this.time.getMonth();
 		return parseInt(month);
 	};
+	
+	Time.month = Time.month();
 	
 	Time.year = function (year) {
 		if (typeof year !== 'undefined') {
@@ -40,6 +46,8 @@ function init(){
 		}
 	};
 	
+	Time.year = Time.year();
+	
 	//Time: Hour, Minuts, Seconds, Miliseconds
 	
 	Time.hour = function (hour) {
@@ -47,20 +55,28 @@ function init(){
 		return parseInt(hour);
 	};
 	
+	Time.hour = Time.hour();
+	
 	Time.minute = function (minute) {
 		minute = this.time.getMinutes();
 		return parseInt(minute);
 	};
+	
+	Time.minute = Time.minute();
 	
 	Time.second = function (second) {
 		second = this.time.getSeconds();
 		return parseInt(second);
 	};
 	
-	Time.millisecond = function (milisecond) {
-		milisecond = this.time.getMilliseconds();
-		return parseInt(milisecond);
+	Time.second = Time.second();
+	
+	Time.millisecond = function (millisecond) {
+		millisecond = this.time.getMilliseconds();
+		return parseInt(millisecond);
 	};
+	
+	Time.millisecond = Time.millisecond();
 	
 	//Exactly time and date
 	

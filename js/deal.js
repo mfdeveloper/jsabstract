@@ -29,8 +29,4 @@ function init() {
 
 (function() {
 	init();
-	//Basic
-	console.log('Hello: {0}'.deal('test'))
-	//Decimal
-	console.log('First: {0:e2}; Second: {1:e3}, Third: {2:e4}'.deal(100.384247983, 257.78432947, 387.84782947))
 }())
